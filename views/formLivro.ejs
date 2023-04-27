@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD de Livros</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Preencha os dados abaixo e clique em Salvar o novo livro.</p>
+    <form action="<%= action %>" method="POST">
+      <table>
+        <tr>
+          <td>Título</td>
+          <td><input type="text" name="edtTitulo" value="<%= registro.livtitulo %>" /></td>
+        </tr>
+        <tr>
+          <td>Ano</td>
+          <td><input type="number" name="edtAno" value="<%= registro.livano %>" /></td>
+        </tr>
+        <tr>
+          <td>Gênero</td>
+          <td><select name="cmbGenero">
+                <option value="1" <% if(registro.gencodigo == 1) { %> selected <% } %> >Computação</option>
+                <option value="2" <% if(registro.gencodigo == 2) { %> selected <% } %> >Fantasia</option>
+                <option value="3" <% if(registro.gencodigo == 3) { %> selected <% } %> >Filosofia</option>
+                <option value="4" <% if(registro.gencodigo == 4) { %> selected <% } %> >História</option>
+                </select></td>
+        </tr>
+        <tr>
+          <td><a href="/">Cancelar</a></td>
+          <td><input type="submit" value="Salvar" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
+
